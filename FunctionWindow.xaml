@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfKnygute.FunctionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKnygute"
+        mc:Ignorable="d"
+        Title="Multifunction Window" Height="242" Width="240"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Height="313" VerticalAlignment="Top">
+        <Label Content="Full Name:" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="Number:" HorizontalAlignment="Left" Margin="42,75,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date of birth:" HorizontalAlignment="Left" Margin="18,106,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtNumber"
+                 HorizontalAlignment="Left" VerticalContentAlignment="Center" 
+                 HorizontalContentAlignment="Center" Height="22"
+                 Margin="98,79,0,0" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="114" BorderBrush="#FF8B92A7"
+                 Background="#FFEFEFEF">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <TextBox x:Name="txtFullName"
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                 HorizontalAlignment="Left" Height="22" Margin="98,48,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114"
+                 BorderBrush="#FF8B92A7" Background="#FFEFEFEF">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <Button x:Name="btnOk"
+                Content="Ok" HorizontalAlignment="Left"
+                Height="28" Margin="23,167,0,0"
+                VerticalAlignment="Top" Width="69" Click="btnOk_Click"
+                Background="#FFABF58B">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Content="Cancel"
+                HorizontalAlignment="Left" Height="28"
+                Margin="142,167,0,0" VerticalAlignment="Top"
+                Width="70" Click="btnCancel" Background="#FFEF7474">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="98,108,0,0" VerticalAlignment="Top" Width="114" BorderBrush="{x:Null}"/>
+
+        <Label x:Name="errorFullName" Content="" HorizontalAlignment="Left" Height="30" Margin="212,48,0,0" VerticalAlignment="Top" Width="28" Background="{x:Null}" Foreground="#FFFF0707"/>
+        <Label x:Name="errorNumber" Content="" HorizontalAlignment="Left" Height="30" Margin="212,78,0,0" VerticalAlignment="Top" Width="28" Background="{x:Null}" Foreground="#FFFF0707" RenderTransformOrigin="0.411,1.218"/>
+
+    </Grid>
+</Window>

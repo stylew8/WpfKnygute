@@ -1,0 +1,101 @@
+﻿<Window x:Class="WpfKnygute.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfKnygute"
+        mc:Ignorable="d"
+        Title="Contacts" Height="450" Width="389"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="DtgContacts" Margin="0,0,98,0" AutoGenerateColumns="False"
+                  CanUserResizeColumns="False" CanUserAddRows="False" CanUserResizeRows="False"
+                  CanUserDeleteRows="False" CanUserReorderColumns="False" RenderTransformOrigin="0.544,0.774"
+                  IsReadOnly="True" Background="White" Foreground="Black">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" Width="1.3*"/>
+                <DataGridTextColumn Header="Number" Binding="{Binding Number}" Width="1.5*"/>
+                <DataGridTextColumn Header="Date of Birth" Binding="{Binding DateOfBirth, StringFormat=\{0:yyyy-MM-dd\}}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="BtnAdd" Content="Add"
+                HorizontalAlignment="Right"
+                Margin="0,74,7,0"
+                VerticalAlignment="Top"
+                Height="35" Width="86"
+                Click="BtnAdd_Click"
+                Cursor="Hand" BorderBrush="#FF81D082" Background="#FF73DA5E" Foreground="White">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="BtnEdit" Content="Edit"
+                HorizontalAlignment="Right"
+                Margin="0,127,7,0"
+                VerticalAlignment="Top"
+                Height="35" Width="86"
+                Click="BtnEdit_Click"
+                Cursor="Hand" Foreground="White" BorderBrush="#FF5565EC" Background="#FFD6DA86">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="btnDelete" Content="Delete"
+                HorizontalAlignment="Right"
+                Margin="0,0,7,10" Width="86"
+                Click="btnDelete_Click" Height="35"
+                VerticalAlignment="Bottom"
+                Background="#FFDE5454"
+                Foreground="White"
+                Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
+</Window>
